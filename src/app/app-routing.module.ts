@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'tables', component: TablesComponent },
   { path: 'page1/:id', component: Page1Component },
   { path: 'page2', component: Page2Component },
+  { path: 'ui', loadChildren: () => import('./ui/ui.module').then(m => m.UiModule) },
   { path: '**', component: PageNotFoundComponent}
 ];
 
