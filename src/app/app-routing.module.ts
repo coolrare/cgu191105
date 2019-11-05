@@ -12,19 +12,12 @@ import { MorrisComponent } from './charts/morris/morris.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'charts',
-    children: [
-      { path: '', pathMatch: 'full', redirectTo: 'flot' },
-      { path: 'flot', component: FlotComponent },
-      { path: 'morris', component: MorrisComponent }
-    ]
-  },
   { path: 'tables', component: TablesComponent },
   { path: 'page1/:id', component: Page1Component },
   { path: 'page2', component: Page2Component },
-  { path: 'ui', loadChildren: () => import('./ui/ui.module').then(m => m.UiModule) },
-  { path: '**', component: PageNotFoundComponent},
-  { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule) }
+  { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule) },
+  { path: 'ui',     loadChildren: () => import('./ui/ui.module').then(m => m.UiModule) },
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

@@ -8,8 +8,6 @@ import { Page2Component } from './page2/page2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TablesComponent } from './tables/tables.component';
-import { FlotComponent } from './charts/flot/flot.component';
-import { MorrisComponent } from './charts/morris/morris.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +16,7 @@ import { MorrisComponent } from './charts/morris/morris.component';
     Page2Component,
     DashboardComponent,
     PageNotFoundComponent,
-    TablesComponent,
-    FlotComponent,
-    MorrisComponent
+    TablesComponent
   ],
   imports: [
     BrowserModule,
