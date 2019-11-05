@@ -17,7 +17,7 @@ export class MorrisComponent implements OnInit {
 
 }
 
-function MorrisChart() {
+export function MorrisChart() {
 
   Morris.Area({
       element: 'morris-area-chart',
