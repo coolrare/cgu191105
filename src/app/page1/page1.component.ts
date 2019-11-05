@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class Page1Component implements OnInit {
 
-  id: number = 0;
+  id = 0;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
