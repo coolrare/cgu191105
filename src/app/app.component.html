@@ -239,13 +239,13 @@
             <!-- /input-group -->
           </li>
           <li>
-            <a [routerLink]="['/']"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+            <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
           </li>
           <li>
-            <a routerLink="/page1"><i class="fa fa-dashboard fa-fw"></i> Page 1</a>
+            <a routerLink="/page1" routerLinkActive="active"><i class="fa fa-dashboard fa-fw"></i> Page 1</a>
           </li>
           <li>
-            <a routerLink="/page2"><i class="fa fa-dashboard fa-fw"></i> Page 2</a>
+            <a routerLink="/page2" routerLinkActive="active"><i class="fa fa-dashboard fa-fw"></i> Page 2</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
