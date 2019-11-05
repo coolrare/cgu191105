@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'page1/:id', component: Page1Component },
   { path: 'page2', component: Page2Component },
   { path: 'ui', loadChildren: () => import('./ui/ui.module').then(m => m.UiModule) },
-  { path: '**', component: PageNotFoundComponent}
+  { path: '**', component: PageNotFoundComponent},
+  { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule) }
 ];
 
 @NgModule({
