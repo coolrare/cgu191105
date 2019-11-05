@@ -5,18 +5,23 @@ import { Page2Component } from './page2/page2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TablesComponent } from './tables/tables.component';
-import { FlotComponent } from './charts/flot/flot.component';
-import { MorrisComponent } from './charts/morris/morris.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'tables', component: TablesComponent },
-  { path: 'page1/:id', component: Page1Component },
-  { path: 'page2', component: Page2Component },
-  { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule) },
-  { path: 'ui',     loadChildren: () => import('./ui/ui.module').then(m => m.UiModule) },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'tables', component: TablesComponent },
+      { path: 'page1/:id', component: Page1Component },
+      { path: 'page2', component: Page2Component },
+      { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule) },
+      { path: 'ui',     loadChildren: () => import('./ui/ui.module').then(m => m.UiModule) },
+    ]
+  },
   { path: '**', component: PageNotFoundComponent}
 ];
 

@@ -8,6 +8,7 @@ import { Page2Component } from './page2/page2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TablesComponent } from './tables/tables.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TablesComponent } from './tables/tables.component';
     Page2Component,
     DashboardComponent,
     PageNotFoundComponent,
-    TablesComponent
+    TablesComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
