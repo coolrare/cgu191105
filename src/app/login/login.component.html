@@ -8,21 +8,25 @@
         <div class="panel-body">
           <form role="form">
             <fieldset>
-              <div class="form-group">
-                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus required
+              <div class="form-group" [class.has-error]="mUsername.invalid">
+                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus required email
                   [(ngModel)]="data.username" #mUsername="ngModel">
+                <div *ngIf="mUsername.invalid && mUsername['errors'].required">請輸入您的 E-mail 地址</div>
+                <div *ngIf="mUsername.invalid && mUsername['errors'].email">請輸入合法的 E-mail 地址</div>
                 <pre>mUsername.value = {{mUsername.value}}
 mUsername.pristine = {{mUsername.pristine}}
 mUsername.dirty = {{mUsername.dirty}}
 mUsername.untouched = {{mUsername.untouched}}
 mUsername.touched = {{mUsername.touched}}
+mUsername.valid = {{mUsername.valid}}
+mUsername.invalid = {{mUsername.invalid}}
 mUsername.disabled = {{mUsername.disabled}}
 mUsername.enabled = {{mUsername.enabled}}
 mUsername.status = {{mUsername.status}}
 mUsername.errors = {{mUsername.errors|json}}</pre>
               </div>
-              <div class="form-group">
-                <input class="form-control" placeholder="Password" name="password" type="password" required
+              <div class="form-group" [class.has-error]="mPassword.invalid">
+                <input class="form-control" placeholder="Password" name="password" type="password" required minlength="3" maxlength="16"
                 [(ngModel)]="data.password" #mPassword="ngModel">
                 <pre>mPassword.value = {{mPassword.value}}
 mPassword.pristine = {{mPassword.pristine}}
