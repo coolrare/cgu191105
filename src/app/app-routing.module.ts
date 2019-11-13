@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TablesComponent } from './tables/tables.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'tables', component: TablesComponent },
+      { path: 'tables', component: TablesComponent, canActivate: [AuthGuard] },
       { path: 'page1/:id', component: Page1Component },
       { path: 'page2', component: Page2Component },
       { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule) },
