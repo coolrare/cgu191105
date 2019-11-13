@@ -33,7 +33,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    useHash: true
+    useHash: true,
+    enableTracing: true,
+    scrollPositionRestoration: 'enabled'
   })],
   exports: [RouterModule]
 })
