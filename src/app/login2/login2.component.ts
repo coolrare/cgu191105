@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login2',
@@ -13,9 +13,18 @@ export class Login2Component implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      email: 'doggy.huang@gmail.com',
-      password: '123123'
+      email: [
+        '',
+        [Validators.required, Validators.email]
+      ],
+      password: [
+        '',
+        [Validators.required, Validators.minLength(3)]
+      ]
     });
+  }
+
+  onSubmit(ngform: NgForm) {
   }
 
 }
