@@ -7,20 +7,20 @@
 <!-- /.row -->
 <div class="row">
   <div class="col-lg-12">
-    <form role="form">
+    <form role="form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="panel panel-default">
-        <div class="panel-heading"> 個人資料 </div>
+        <div class="panel-heading"> 基本資料 </div>
         <div class="panel-body">
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
                 <label>姓名</label>
-                <input class="form-control">
+                <input class="form-control" formControlName="name" placeholder="請輸入您的中文全名">
                 <p class="help-block">Example block-level help text here.</p>
               </div>
               <div class="form-group">
                 <label>電話</label>
-                <input class="form-control" placeholder="Enter text">
+                <input class="form-control" formControlName="phone" placeholder="請輸入手機號碼(09xx-xxxxxx)" >
               </div>
             </div>
           </div>
@@ -28,6 +28,36 @@
         </div>
         <!-- /.panel-body -->
       </div>
+      <!-- /.panel -->
+
+      <div formArrayName="emergencyContacts">
+
+        <div class="panel panel-default"
+            *ngFor="let contact of form.get('emergencyContacts')['controls']; let i=index"
+            [formGroupName]="i"
+            >
+          <div class="panel-heading"> 緊急聯絡人 {{i+1}} </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>姓名</label>
+                  <input class="form-control" formControlName="name" placeholder="請輸入您的中文全名">
+                  <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <div class="form-group">
+                  <label>電話</label>
+                  <input class="form-control" formControlName="phone" placeholder="請輸入手機號碼(09xx-xxxxxx)">
+                </div>
+              </div>
+            </div>
+            <!-- /.row (nested) -->
+          </div>
+          <!-- /.panel-body -->
+        </div>
+
+      </div>
+
       <!-- /.panel -->
     </form>
     <!-- /.col-lg-6 (nested) -->
