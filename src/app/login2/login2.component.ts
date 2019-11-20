@@ -31,8 +31,19 @@ export class Login2Component implements OnInit {
       password: [
         '',
         [Validators.required, Validators.minLength(3)]
+      ],
+      isRemember: [
+        false
       ]
     });
+
+    const data = {
+      email: 'doggy.huang@gmail.com',
+      password: '123123',
+      isRemember: false
+    };
+
+    this.form.setValue(data);
   }
 
   onSubmit(ngform: NgForm) {
@@ -48,7 +59,7 @@ export class Login2Component implements OnInit {
 
 
 function checkID(id: string) {
-  const tab = 'ABCDEFGHJKLMNPQRSTUVXYWZIO'
+  const tab = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
   const A1 = new Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3);
   const A2 = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5);
   const Mx = new Array(9, 8, 7, 6, 5, 4, 3, 2, 1, 1);

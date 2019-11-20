@@ -8,7 +8,7 @@
         <div class="panel-body">
           <form role="form" [formGroup]="form" (ngSubmit)="onSubmit(ngform)" #ngform="ngForm">
             <fieldset>
-              <div class="form-group" [class.has-error]="form.get('email').invalid">
+              <div class="form-group" [class.has-error]="form.get('email').invalid && form.get('email').touched">
                 <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus formControlName="email">
               </div>
               <pre>form.get('email').value = {{form.get('email').value}}
@@ -22,12 +22,12 @@ form.get('email').disabled = {{form.get('email').disabled}}
 form.get('email').enabled = {{form.get('email').enabled}}
 form.get('email').status = {{form.get('email').status}}
 form.get('email').errors = {{form.get('email').errors|json}}</pre>
-              <div class="form-group" [class.has-error]="form.get('password').invalid">
+              <div class="form-group" [class.has-error]="form.get('password').invalid && form.get('password').touched">
                 <input class="form-control" placeholder="Password" name="password" type="password" formControlName="password">
               </div>
               <div class="checkbox">
                 <label>
-                  <input name="remember" type="checkbox" value="Remember Me">Remember Me </label>
+                  <input name="remember" type="checkbox" value="Remember Me" formControlName="isRemember">Remember Me </label>
               </div>
               <!-- Change this to a button or input when using this as a form -->
               <button [disabled]="form.invalid" class="btn btn-lg btn-success btn-block">Login</button>
