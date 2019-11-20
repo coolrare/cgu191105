@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -19,10 +19,6 @@ export class FormsComponent implements OnInit {
         this.fb.group({
           name: ['Tom', [Validators.required]],
           phone: ['09', [Validators.required, Validators.pattern(/\d{4}-\4{6}/)]],
-        }),
-        this.fb.group({
-          name: ['Lee', [Validators.required]],
-          phone: ['08', [Validators.required, Validators.pattern(/\d{4}-\4{6}/)]],
         })
       ])
     });
@@ -32,6 +28,15 @@ export class FormsComponent implements OnInit {
     if (this.form.valid) {
       // TODO
     }
+  }
+
+  addContact() {
+    const contacts = this.form.get('emergencyContacts') as FormArray;
+
+    contacts.push(this.fb.group({
+      name: ['', [Validators.required]],
+      phone: ['', [Validators.required, Validators.pattern(/\d{4}-\4{6}/)]],
+    }));
   }
 
 }
