@@ -13,6 +13,7 @@ import { TablesComponent } from './tables/tables.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { Login2Component } from './login2/login2.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { Login2Component } from './login2/login2.component';
     TablesComponent,
     LayoutComponent,
     LoginComponent,
-    Login2Component
+    Login2Component,
+    FormsComponent
   ],
   imports: [
     BrowserModule,

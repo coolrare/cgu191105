@@ -9,6 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { Login2Component } from './login2/login2.component';
+import { FormsComponent } from './forms/forms.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'tables', component: TablesComponent, canActivate: [AuthGuard] },
+      { path: 'forms', component: FormsComponent },
       { path: 'page1/:id', component: Page1Component },
       { path: 'page2', component: Page2Component },
       { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule) },
