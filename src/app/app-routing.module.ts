@@ -8,12 +8,13 @@ import { TablesComponent } from './tables/tables.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { Login2Component } from './login2/login2.component';
 
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: Login2Component
   },
   {
     path: '',
